@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.container-main {
+  @apply container mx-auto;
+}
+/* Custom CSS for animations */
+details[open] .content {
+  max-height: 100vh;
+  transition: max-height 0.3s ease-in-out;
+}
+
+details .content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+.slash-gradient-l-r {
+  @apply bg-gradient-to-r from-primary to-accent;
+}
