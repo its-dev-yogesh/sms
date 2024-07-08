@@ -115,10 +115,11 @@ export default function DashboardLayout({
     <div
       className={`relative flex flex-col h-screen justify-between ${
         drawerState && isAuthenticated ? "md:ml-64" : "ml-0"
-      }`}>
+      }`}
+    >
       <DashboardNavbar />
       {/* Main */}
-      <main>
+      <main className="top-16">
         {/* Main Content */}
         <div className="p-4">{children}</div>
       </main>

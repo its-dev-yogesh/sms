@@ -14,9 +14,10 @@ export const NavContainer: React.FC<NavContainerProps> = ({
   return (
     <div
       className={cn(
-        "navbar text-black max-h-16 backdrop-blur-md bg-base-200",
+        "navbar text-black max-h-16 backdrop-blur-md bg-base-200 px-4",
         className
-      )}>
+      )}
+    >
       {children}
     </div>
   );
