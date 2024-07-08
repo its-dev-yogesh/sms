@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode } from "react";
 
 interface NavListProps {
   navItems: { start: ReactNode[]; center: ReactNode[]; end: ReactNode[] };
@@ -14,7 +14,7 @@ export const NavList: React.FC<NavListProps> = ({ navItems }) => {
             : item
         )}
       </div>
-      <div className="navbar-center md:flex hidden font-bold text-neutral">
+      <div className="navbar-center md:flex hidden font-bold text-neutral  gap-2">
         {navItems.center.map((item, index) =>
           React.isValidElement(item)
             ? React.cloneElement(item, { key: index })

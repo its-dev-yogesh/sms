@@ -1,11 +1,11 @@
-'use client';
-import IconButton from '@/components/Button/IconButton';
-import { useMutationLogin } from '@/services';
-import { authLogout, useAuthUser } from '@/stores';
-import { dateFormatter, isTokenValid } from '@/utils';
-import localStorageAvailable from '@/utils/localStorageAvailable';
-import { JwtPayload } from 'jsonwebtoken';
-import { useRouter } from 'next/navigation';
+"use client";
+import IconButton from "@/components/Button/IconButton";
+import { useMutationLogin } from "@/services";
+import { authLogout, useAuthUser } from "@/stores";
+import { dateFormatter, isTokenValid } from "@/utils";
+import localStorageAvailable from "@/utils/localStorageAvailable";
+import { JwtPayload } from "jsonwebtoken";
+import { useRouter } from "next/navigation";
 
 export default function Page() {
   const user = useAuthUser();
@@ -15,18 +15,18 @@ export default function Page() {
     mutateLogin: mutate,
     isLoginPending: isPending,
     isLoginError: isError,
-    LoginErrorDetail: error
+    LoginErrorDetail: error,
   } = useMutationLogin();
   // const [data, setData] = useState<UserData>();
   const handleFetch = () => {
-    const coos = { Sd: '' };
+    const coos = { Sd: "" };
     mutate(undefined, {
       // onSuccess: (res) => res != null && setData(res?.data),
     });
   };
 
   const handleLogout = () => {
-    router.push('/');
+    router.push("/");
     authLogout(router);
   };
 
@@ -41,7 +41,7 @@ export default function Page() {
   }
   const storageAvailable = localStorageAvailable();
   let token;
-  if (storageAvailable) token = localStorage.getItem('token');
+  if (storageAvailable) token = localStorage.getItem("token");
 
   // We can assume by this point that `isSuccess === true`
   return (
@@ -56,7 +56,7 @@ export default function Page() {
         buttonLabel="Log out"
         variant="soft"
       />
-      <div>{JSON.stringify(user)}</div>
+      {/* <div>{JSON.stringify(user)}</div> */}
     </ul>
   );
 }

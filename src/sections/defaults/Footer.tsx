@@ -1,17 +1,14 @@
-'use client';
-import { useDeviceType } from '@/hooks/useDeviceType';
-import { useAuthState } from '@/stores';
-import { useDrawerState } from '@/stores/selectors/drawer.selector';
+"use client";
+import { useDeviceType } from "@/hooks/useDeviceType";
+import { useAuthState } from "@/stores";
+import { useDrawerState } from "@/stores/selectors/drawer.selector";
 
 export default function Footer() {
   const drawerState = useDrawerState();
   const isAuthenticated = useAuthState();
   return (
     <footer
-      className={` bg-gray-700 text-white p-4 transition-all duration-300 ${
-        drawerState && isAuthenticated ? 'md:ml-64' : 'ml-0'
-      }`}
-    >
+      className={` bg-gray-700 text-white p-4 transition-all duration-300`}>
       <div className="container mx-auto w-full">
         <div className="footer">
           <nav>
